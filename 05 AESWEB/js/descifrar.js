@@ -1,13 +1,16 @@
 
 //se muestra el contenido del archivo de la siguiente forma
 function leerArchivo(e) {
+  //posicion incial de la variable archivo
     var archivo = e.target.files[0];
     if (!archivo) {
       return;
     }
+    //instanciamos la clase FileReader
     var lector = new FileReader();
     lector.onload = function(e) {
       var contenido = e.target.result;
+      //llamado al metodo
       mostrarContenido(contenido);
     };
     lector.readAsText(archivo);
